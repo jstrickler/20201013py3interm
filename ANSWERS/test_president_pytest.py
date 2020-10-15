@@ -3,11 +3,22 @@ import pytest
 from president import President
 from datetime import date
 
+with open('../DATA/presidents.txt') as pres_in:
+    LAST_NAMES = [line.split(':')[1] for line in pres_in]
+
+TERM_NUMBERS = range(1, 46)
+
+LAST_NAME_DATA = zip(TERM_NUMBERS, LAST_NAMES)
 
 def test_president_one_last_name_is_george():
     p = President(1)
     assert p.first_name == "George"
 
+
+@pytest.mark.parametrize('term_number,last_name', LAST_NAME_DATA)
+def test_last_names_match_terms(term_number, last_name):
+    p = President(term_number)
+    assert p.last_name == last_name
 
 @pytest.mark.parametrize('term_number', range(1, 46))
 def test_date_fields_return_dates_or_none(term_number):

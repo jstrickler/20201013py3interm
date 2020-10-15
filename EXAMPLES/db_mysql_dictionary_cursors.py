@@ -23,7 +23,8 @@ num_recs = c.execute('''
 print(c.description)
 
 for row in c.fetchall():
-    print(row['firstname'], row['lastname'])
+    print(row)
+#    print(row['firstname'], row['lastname'])
 print()
 
 
