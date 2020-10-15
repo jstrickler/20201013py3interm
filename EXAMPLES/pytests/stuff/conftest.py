@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from pytest import fixture
+# pytest_plugins = "django"
 
 @fixture
 def common_fixture():  # <1>

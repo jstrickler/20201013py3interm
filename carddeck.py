@@ -1,6 +1,12 @@
+"""
+Provide CardDeck class
+"""
 import random
 
 class CardDeck:
+    """
+    One deck of cards
+    """
     SUITS = "Clubs Diamonds Hearts Spades".split()
     RANKS = "2 3 4 5 6 7 8 9 10 J Q K A".split()
 
@@ -16,17 +22,37 @@ class CardDeck:
                 self._cards.append(card)
 
     def shuffle(self):
+        """
+        Randomize the deck
+
+        :return:
+        """
         random.shuffle(self._cards)
 
     def draw(self):
+        """
+        Retrieve a card from the deck
+
+        :return:
+        """
         return self._cards.pop()
 
     @property
     def cards(self):
+        """
+        List of current cards in deck
+
+        :return:
+        """
         return self._cards
 
     @property
     def dealer_name(self):
+        """
+        Get/set dealer name
+
+        :return:
+        """
         return self._dealer_name
 
     @dealer_name.setter
@@ -39,10 +65,16 @@ class CardDeck:
 
     @classmethod
     def get_ranks(cls):
+        """
+        Return list of card ranks
+
+        :return:
+        """
         return cls.RANKS
 
     @staticmethod
     def yell():
+        """Silly method"""
         print("HOORAY!!!")
 
     def __len__(self):  # implements len()

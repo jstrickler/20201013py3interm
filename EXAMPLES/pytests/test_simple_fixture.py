@@ -7,6 +7,7 @@ Person = namedtuple('Person', 'first_name last_name')  # <1>
 FIRST_NAME = "Guido"
 LAST_NAME = "Von Rossum"
 
+
 @pytest.fixture  # <2>
 def person():
     """
@@ -14,6 +15,9 @@ def person():
     """
     return Person(FIRST_NAME, LAST_NAME)  # <3>
 
+def test_name(person):
+    assert person.first_name == FIRST_NAME
+    assert person.last_name == LAST_NAME
 
 def test_first_name(person):  # <4>
     assert person.first_name == FIRST_NAME

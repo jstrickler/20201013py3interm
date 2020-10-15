@@ -10,7 +10,7 @@ def test_missing_filename():
 
 def test_list():
     print()
-    assert (.1 + .2) == pytest.approx(.3)  # <3>
+    assert (.1 + .2) == pytest.approx(.3)  # <3>  # default tolerance 1e-6
 
 def test_approximate_pi():
     assert 22 / 7 == pytest.approx(math.pi, .001)  # <4>

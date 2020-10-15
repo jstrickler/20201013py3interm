@@ -19,9 +19,10 @@ class Spam():  # <2>
 # def ham(n):
 #     pass
 
+TEST_VALUE = 42
 def test_spam_calls_ham():   # <5>
-    _ = Spam(42)  # <6>
-    ham.assert_called_once_with(42)  # <7>
+    Spam(TEST_VALUE)  # <6>
+    ham.assert_called_once_with(TEST_VALUE)  # <7>
 
 
 if __name__ == '__main__':

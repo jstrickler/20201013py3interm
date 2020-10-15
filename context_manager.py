@@ -4,6 +4,8 @@ with open('DATA/mary.txt') as mary_in:
     pass
 
 
+#  Copyright (c) 2020. CJ Associates
+
 class Spam:
     def __init__(self):
         print("in constructor")
@@ -21,3 +23,4 @@ class Spam:
 
 with Spam() as s:  #  s = Spam()
     print("In the with block")
+
