@@ -11,7 +11,7 @@ print()
 
 with tarfile.open('../DATA/pres.tar') as tarfile_in:  # <3>
     for member in tarfile_in:  # <4>
-        print(member.name, member.size)  # <5>
+        print(member.dog_name, member.size)  # <5>
     print()
 
 with tarfile.open('../DATA/pres.tar') as tarfile_in:

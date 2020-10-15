@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-from electrical import *  # <1>
-from navigation import *  # <2>
+from EXAMPLES.electrical import *  # <1>
+from EXAMPLES.navigation import *  # <2>
 
 print(current())  # <3>
 print(voltage())

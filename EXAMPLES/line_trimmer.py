@@ -3,10 +3,8 @@
 def trimmed(file_name):
     with open(file_name) as file_in:
         for line in file_in:
-            if line.endswith('\n'):
-                line = line.rstrip('\n\r')
-            yield line  # <1>
+            yield line.rstrip('\n\r')
 
 
-for trimmed_line in trimmed('../DATA/mary.txt'):  # <2>
-    print(trimmed_line)
+for line in trimmed('../DATA/mary.txt'):  # <2>
+    print(line)
