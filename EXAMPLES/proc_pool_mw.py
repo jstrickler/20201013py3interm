@@ -1,7 +1,12 @@
 #!/usr/bin/env python
-from multiprocessing.dummy import Pool  # <1>
+from multiprocessing import Pool, Manager  # <1>
 from pprint import pprint
 import requests
+
+m = Manager()
+values = m.list()
+other_values = m.dict()
+
 
 POOL_SIZE = 64
 
@@ -33,16 +38,18 @@ def fetch_data(term):  # <5>
         return sorted(set(parts_of_speech))  # <9>
 
 
-p = Pool(POOL_SIZE)  # <10>
+if __name__ == '__main__':
 
-results = p.map(fetch_data, search_terms[:1000])  # <11>
+    p = Pool(POOL_SIZE)  # <10>
 
-for i, (search_term, result) in enumerate(zip(search_terms, results)):  # <12>
-    print("{}:".format(search_term.upper()), end=' ')
-    if result:
-        print(result)
-    else:
-        print("** no results **")
-    print()
-    if i == 10:
-        break
+    results = p.map(fetch_data, search_terms[:1000])  # <11>
+
+    for i, (search_term, result) in enumerate(zip(search_terms, results)):  # <12>
+        print("{}:".format(search_term.upper()), end=' ')
+        if result:
+            print(result)
+        else:
+            print("** no results **")
+        print()
+        if i == 10:
+            break

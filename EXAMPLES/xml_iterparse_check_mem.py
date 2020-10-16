@@ -3,7 +3,7 @@ from lxml.etree import iterparse
 from memorychecker import MemoryChecker
 
 def main():
-    doc = iterparse("../BIG_DATA/pubmed19n0001.xml", tag='PubmedArticle')  # <1>
+    doc = iterparse("../DATA/pubmed19n0001.xml", tag='PubmedArticle')  # <1>
 
     mem_checker = MemoryChecker()  # <2>
 

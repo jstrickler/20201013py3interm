@@ -17,4 +17,4 @@ def get_primes(kmax): # <1>
     return result
 
 if __name__ == '__main__':
-    print(primes(100))
+    print(get_primes(100))

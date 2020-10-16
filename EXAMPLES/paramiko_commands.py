@@ -2,6 +2,8 @@
 
 import paramiko
 
+#TODO: Windows version
+
 with paramiko.SSHClient() as ssh:  # <1>
 
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())  # <2>

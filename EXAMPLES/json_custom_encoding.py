@@ -26,6 +26,8 @@ parrots = [  # <3>
 
 
 def encode(obj):  # <4>
+    if hasattr(obj, 'to_json'):
+        return obj.to_json
     if isinstance(obj, date):  # <5>
         return obj.ctime()  # <6>
     elif isinstance(obj, Parrot):  # <7>

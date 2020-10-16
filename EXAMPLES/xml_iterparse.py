@@ -3,7 +3,7 @@ from lxml.etree import iterparse
 
 
 def main():
-    doc = iterparse("../BIG_DATA/pubmed19n0001.xml", tag='PubmedArticle')  # <1>
+    doc = iterparse("../DATA/pubmed19n0001.xml", tag='PubmedArticle')  # <1>
 
     for i, (event, element) in enumerate(doc, 1):  # <2>
         article_title = element.findtext('.//ArticleTitle')   # <3>

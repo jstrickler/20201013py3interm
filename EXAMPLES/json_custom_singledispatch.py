@@ -44,12 +44,12 @@ def encode(obj):
 
 
 @encode.register(date)
-def encode_date(date_obj):
+def _(date_obj):
     return date_obj.isoformat()
 
 
 @encode.register(Parrot)
-def encode_parrot(parrot_obj):
+def _(parrot_obj):
     return {'name': parrot_obj.dog_name, 'color': parrot_obj.color}
 
 

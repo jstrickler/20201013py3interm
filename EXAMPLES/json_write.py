@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+from datetime import date
 import json
 
 george = [
@@ -7,8 +7,8 @@ george = [
         'num': 1,
         'lname': 'Washington',
         'fname': 'George',
-        'dstart': [1789, 4, 30],
-        'dend': [1797, 3, 4],
+        'dstart': date(1789, 4, 30),
+        'dend': date(1797, 3, 4),
         'birthplace': 'Westmoreland County',
         'birthstate': 'Virginia',
         'dbirth': [1732, 2, 22],
