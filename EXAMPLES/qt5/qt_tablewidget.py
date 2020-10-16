@@ -21,7 +21,7 @@ class TableWidgetMain(QMainWindow):
         db = QSqlDatabase.addDatabase("QSQLITE")
         db.setDatabaseName('../../DATA/presidents.db')
         if not db.open():
-            raise Error("Could not open the database")
+            raise Exception("Could not open the database")
 
         self.ui.model = QSqlTableModel(self, db)
         self.ui.model.setTable("presidents")

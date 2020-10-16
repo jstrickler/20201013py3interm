@@ -20,8 +20,8 @@ def main(args):
     )  # <3>
 
     if response.status_code == requests.codes.OK:
-        # pprint(response.content.decode())
-        # print('-' * 60)
+        pprint(response.content.decode())
+        print('-' * 60)
         data = response.json()  # <4>
         for entry in data: # <5>
             if isinstance(entry, dict):
@@ -39,6 +39,14 @@ def main(args):
     else:
         print("Sorry, HTTP response", response.status_code)
 
+
+    with requests.Session() as s:
+        # s.auth = ('username', 'password')
+        # s.headers.update({'h1': 'v1', 'h2': 'v2'})
+
+
+        response = s.get(BASE_URL + "mole")
+        print(response.status_code)
 
 if __name__ == '__main__':
     main(sys.argv[1:])

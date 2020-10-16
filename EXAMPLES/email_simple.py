@@ -8,13 +8,13 @@ TIMESTAMP = datetime.now().ctime()  # <4>
 
 SENDER = 'jstrick@mindspring.com'
 RECIPIENTS = ['jstrickler@gmail.com']
-MESSAGE_SUBJECT = 'Python SMTP example'
+MESSAGE_SUBJECT = 'Python SMTP example on October 16'
 
-MESSAGE_BODY = """
-Hello at {}.
+MESSAGE_BODY = f"""
+Hello at {TIMESTAMP}.
 
 Testing email from Python
-""".format(TIMESTAMP)
+"""
 
 SMTP_USER = 'pythonclass'
 SMTP_PASSWORD = getpass("Enter SMTP server password:")  # <5>
